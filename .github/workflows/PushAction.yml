@@ -1,0 +1,16 @@
+name: PushAction
+on: [push]
+jobs:
+    PushQuote:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v3
+        - uses: actions/setup-python@v3
+        - uses: jannekem/run-python-script-action@v1
+          with:
+            script: |
+              import os
+              print("Directory contents:")
+              for f in os.listdir():
+                  print(f)
+              print("Push yourself to keep improving or you'll stay as close to the bottom as you are to the top")
