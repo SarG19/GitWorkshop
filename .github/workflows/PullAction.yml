@@ -1,14 +1,27 @@
 name: PullAction
-on: [pull_request]
+on:
+  pull_request:
+    # Run Image Actions when JPG, JPEG, PNG or WebP files are added or changed.
+    # See https://help.github.com/en/actions/automating-your-workflow-with-github-actions/workflow-syntax-for-github-actions#onpushpull_requestpaths for reference.
+    paths:
+      - '**.jpg'
+      - '**.jpeg'
+      - '**.png'
+      - '**.webp'
 jobs:
     PullQuote:
       runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v3
         - uses: actions/setup-python@v3
-            pullmeme.jpg
+        - uses: SarG19/update-readme-image@main
         - uses: jannekem/run-python-script-action@v1
           with:
+            GH_TOKEN: ${{ secrets.GH_TOKEN }}
+            IMG_REPOSITORY: SarG19/pullmeme.jpg
+            HEIGHT: 180px
+            WIDTH: 180px
+            ALIGN: center
             script:
               print("Have Patience.\n All things are difficult before they become easy")
  
