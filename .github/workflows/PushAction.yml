@@ -1,8 +1,5 @@
 name: PushAction
-on:
-  push:
-    branches:
-      -master
+on: [push]
 jobs:
     PushQuote:
       runs-on: ubuntu-latest
