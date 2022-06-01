@@ -1,0 +1,13 @@
+name: PullAction
+on: [pull_request]
+jobs:
+    PullQuote:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v3
+        - uses: actions/setup-python@v3
+        - uses: jannekem/run-python-script-action@v1
+          with:
+            script:
+              print("Have Patience")
+              print("All things are difficult before they become easy")
