@@ -13,3 +13,6 @@ jobs:
             print("Directory contents:")
             for f in os.listdir():
                 print(f)
+            from PIL import Image
+            im = Image.open('https://images.app.goo.gl/7eGaJ8mQUCCzeNAg8')
+            im.show()
