@@ -6,8 +6,14 @@ jobs:
       steps:
         - uses: actions/checkout@v3
         - uses: actions/setup-python@v3
+        - uses: SarG19/update-readme-image@main
         - uses: jannekem/run-python-script-action@v1
           with:
+            GH_TOKEN: ${{ secrets.GH_TOKEN }}
+            IMG_REPOSITORY: SarG19/pullmeme.jpg
+            HEIGHT: 180px
+            WIDTH: 180px
+            ALIGN: center
             script: |
               import os
               print("Directory contents:")
