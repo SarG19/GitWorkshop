@@ -9,5 +9,4 @@ jobs:
         - uses: jannekem/run-python-script-action@v1
           with:
             script:
-              print("Have Patience")
-              print("All things are difficult before they become easy")
+              print("Have Patience.\n All things are difficult before they become easy")
