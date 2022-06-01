@@ -1,24 +1,19 @@
 name: learn-github-actions
-on: [push]
+on:
+  push:
+    branches:
+      -master
 jobs:
-  check-bats-version:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v3
-      - uses: jannekem/run-python-script-action@v1
-        with:
-          script: |
-            import os
-            print("Directory contents:")
-            for f in os.listdir():
-                print(f)
-            import urllib.request
-
-            from PIL import Image
-
-            urllib.request.urlretrieve(https://images.app.goo.gl/7eGaJ8mQUCCzeNAg8, “file_name”)
-
-            img = Image.open(“file_name”)
-
-            img.show()
+    PushQuote:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v3
+        - uses: actions/setup-python@v3
+        - uses: jannekem/run-python-script-action@v1
+          with:
+            script: |
+              import os
+              print("Directory contents:")
+              for f in os.listdir():
+                  print(f)
+              print("Push yourself to keep improving or you'll stay as close to the bottom as you are to the top")
