@@ -6,7 +6,9 @@ jobs:
       steps:
         - uses: actions/checkout@v3
         - uses: actions/setup-python@v3
+            pullmeme.jpg
         - uses: jannekem/run-python-script-action@v1
           with:
             script:
               print("Have Patience.\n All things are difficult before they become easy")
+ 
