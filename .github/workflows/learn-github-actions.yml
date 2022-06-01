@@ -17,7 +17,7 @@ jobs:
 
             from PIL import Image
 
-            urllib.request.urlretrieve(‘https://images.app.goo.gl/7eGaJ8mQUCCzeNAg8’, “file_name”)
+            urllib.request.urlretrieve(https://images.app.goo.gl/7eGaJ8mQUCCzeNAg8, “file_name”)
 
             img = Image.open(“file_name”)
 
